@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(MainActivity.this, Pantalla2.class);
             intent.putExtra("MENSAJE_ENVIADO", textoMensaje);
             launcherActivity2.launch(intent);
+            etMensaje.setText(""); //agg esta linea de ultimo porque quedaba guardado el mensaje al retornar a la pantalla 1
         });
     }
 }
