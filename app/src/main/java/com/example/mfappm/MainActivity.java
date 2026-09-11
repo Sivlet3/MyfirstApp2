@@ -1,4 +1,50 @@
 package com.example.mfappm;
+//importacion de paquetes y librerias
 
-public class MainActivity {
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.appcompat.app.AppCompatActivity;
+
+public class MainActivity extends AppCompatActivity {
+
+    private EditText etMensaje;
+    private TextView tvEstadoRespuesta;
+    private ActivityResultLauncher<Intent> launcherActivity2;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        etMensaje = findViewById(R.id.etMensaje);
+        tvEstadoRespuesta = findViewById(R.id.tvEstadoRespuesta);
+        Button btnEnviar = findViewById(R.id.btnEnviar);
+
+        // Registro del callback para recibir la respuesta de Activity2
+        //Registro "registerForActivityResult" lo que hace es que notifica al ciclo de vida de android que pantalla 1(está) esta esperando una respuesta de 2
+        launcherActivity2 = registerForActivityResult(
+                new ActivityResultContracts.StartActivityForResult(),
+                result -> {
+                    if (result.getResultCode() == RESULT_OK && result.getData() != null) {
+                        String estado = result.getData().getStringExtra("ESTADO_RESPUESTA");
+                        tvEstadoRespuesta.setText("Estado devuelto: " + estado);
+                    }
+                }
+        );
+        //StartActivityForResult es algo como un contrato, este hace lo de un contrato especifica que tipo de accion se espera:
+// el bloque de result  es el que se queda en pausa espetando a que la pantalla 2 ejecute una accion para finalisar el estado y ps genera le respuesta dicha.
+
+
+        btnEnviar.setOnClickListener(v -> {
+            String textoMensaje = etMensaje.getText().toString();
+            Intent intent = new Intent(MainActivity.this, Pantalla2.class);
+            intent.putExtra("MENSAJE_ENVIADO", textoMensaje);
+            launcherActivity2.launch(intent);
+        });
+    }
 }
