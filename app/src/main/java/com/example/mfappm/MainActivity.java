@@ -40,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
 // el bloque de result  es el que se queda en pausa espetando a que la pantalla 2 ejecute una accion para finalisar el estado y ps genera le respuesta dicha.
 
 
+        //aqui ps el sistema escucha por asi decirlo los click de los botones y dependiendo de cual clikeemos envia una respuesta a pantalla 1
         btnEnviar.setOnClickListener(v -> {
             String textoMensaje = etMensaje.getText().toString();
             Intent intent = new Intent(MainActivity.this, Pantalla2.class);
@@ -48,3 +49,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 }
+
+// los intent nos ayudan a crear un paquete de datos vacios para enviar la respuesta de regreso
+// el putextra empaca la respuesta en ese paquete vacio bajo la clave denomidada(estado respuesta)
+//por ultimo el setresultado marca como exitoso en la pantalla 1 y el finish destruye la actividad actual para regresar a pantalla 1 y capturar la respuesta
