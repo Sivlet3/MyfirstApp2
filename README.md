@@ -52,7 +52,7 @@ app/
 
 ---
 
-## 📸 Evidencias de Funcionamiento (Pruebas)
+## 📸 Evidencias de Funcionamiento (Pruebas) 
 
 ### 1. Pantalla Principal (Ingreso de Mensaje)
 Muestra la primera interfaz con el campo de texto y el botón de envío.
@@ -72,5 +72,8 @@ Muestra la conexion correcta de el celular el cual utilizaremos como dispositiva
 ![Conexion establecida](gradle/img/configuracion%20de%20cel%20y%20entorno.png)
 
 ### 5. Pruebas adicionales
-![Img,creacion de pantalla 2](gradle/img/creacion%20de%20la%20pantalla%202.png)
+
 !![videogift](gradle/img/videoprueba.gif)
+
+### 6. Pruebas adicionales 2
+![Img,creacion de pantalla 2](gradle/img/creacion%20de%20la%20pantalla%202.png)
