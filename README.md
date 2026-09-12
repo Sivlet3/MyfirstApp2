@@ -73,7 +73,8 @@ Muestra la conexion correcta de el celular el cual utilizaremos como dispositiva
 
 ### 5. Pruebas adicionales
 
-!![videogift](gradle/img/videoprueba.gif)
+![videogift](gradle/img/videoprueba.gif)
 
 ### 6. Pruebas adicionales 2
-![Img,creacion de pantalla 2](gradle/img/creacion%20de%20la%20pantalla%202.png)
+![creacion de pantalla 2](gradle/img/creacion%20de%20la%20pantalla%202.png)
+
